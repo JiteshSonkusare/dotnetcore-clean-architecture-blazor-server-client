@@ -1,0 +1,32 @@
+@inherits LayoutComponentBase
+
+<MudThemeProvider Theme="_currentTheme" />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<MudLayout>
+	<MudAppBar Elevation="25" Style="border: 0;" Fixed="true">
+		<MudIconButton Icon="@Icons.Material.Outlined.Menu" style="color: #fff;" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
+		<MudSpacer />
+		<MudHidden Breakpoint="Breakpoint.MdAndUp" Invert="true">
+			<MudText Typo="Typo.h5" Class="ml-4" style="color: #fff;">Application Name</MudText>
+		</MudHidden>
+		<MudSpacer />
+		<LoginDisplay />
+	</MudAppBar>
+	<MudDrawer @bind-Open="_drawerOpen" Elevation="25" Variant="@DrawerVariant.Responsive" Width="300px">
+		<MudDrawerHeader>
+			<img src="images/logo.png" style="margin-left:20px;" />
+		</MudDrawerHeader>
+		<NavMenu />
+		<MudSpacer />
+		<MudTFootRow>
+			<MudAlert Style="font-size:smaller;" Icon="@Icons.Rounded.Copyright">Copyright 2022</MudAlert>
+		</MudTFootRow>
+	</MudDrawer>
+	<MudMainContent>
+		<MudContainer MaxWidth="MaxWidth.False" Class="mt-6" Style="padding-bottom:100px;">
+			@Body
+		</MudContainer>
+	</MudMainContent>
+</MudLayout>

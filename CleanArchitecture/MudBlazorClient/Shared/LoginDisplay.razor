@@ -1,0 +1,9 @@
+﻿<AuthorizeView>
+	<Authorized>
+		<MudText Class="ml-4" style="color: #fff;">@context.User.Identity?.Name!</MudText>
+		<a style="color: #fff; margin-left:20px;" href="MicrosoftIdentity/Account/SignOut">Sign out</a>
+	</Authorized>
+	<NotAuthorized>
+		<a style="color: #fff;" href="MicrosoftIdentity/Account/SignIn">Sign in</a>
+	</NotAuthorized>
+</AuthorizeView>
