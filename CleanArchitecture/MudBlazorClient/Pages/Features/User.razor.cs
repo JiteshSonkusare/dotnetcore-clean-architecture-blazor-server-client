@@ -2,6 +2,7 @@
 using Microsoft.Identity.Web;
 using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Authorization;
 using Client.Infrastructure.Configuration;
 using Client.Infrastructure.Authentication;
 using Client.Infrastructure.ApiClientManagers;
@@ -9,6 +10,7 @@ using ViewModel = Client.Infrastructure.ViewModels;
 
 namespace MudBlazorClient.Pages.Features
 {
+    [Authorize]
     public partial class User
     {
         private bool _loaded;
