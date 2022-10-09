@@ -8,7 +8,7 @@ using Client.Infrastructure.Authentication;
 using Client.Infrastructure.ApiClientManagers;
 using ViewModel = Client.Infrastructure.ViewModels;
 
-namespace MudBlazorClient.Pages.Features
+namespace MudBlazorClient.Pages.Features.User
 {
     [Authorize]
     public partial class User
