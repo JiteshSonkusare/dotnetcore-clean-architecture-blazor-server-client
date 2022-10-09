@@ -23,6 +23,14 @@ namespace MudBlazorClient.Extensions
                               .Build();
                 options.Filters.Add(new AuthorizeFilter(policy));
             }).AddMicrosoftIdentityUI();
+            services.Configure<OpenIdConnectOptions>(OpenIdConnectDefaults.AuthenticationScheme, options =>
+            {
+                options.Events.OnSignedOutCallbackRedirect = async context =>
+                {
+                    context.HttpContext.Response.Redirect("/");
+                    context.HandleResponse();
+                };
+            });
         }
     }
 }
